@@ -16,7 +16,7 @@ for (let i = 0; i < itens.length; i++) {
 
         let round = getRound()
 
-        if (round) {
+        if (!round) {
             scoreItens[0].classList.add('scoreboard-item-round')
             scoreItens[1].classList.remove('scoreboard-item-round')
             scoreItens[1].classList.add('scoreboard-item')
