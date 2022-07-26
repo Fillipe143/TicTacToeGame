@@ -11,25 +11,24 @@ for (let i = 0; i < itens.length; i++) {
     itens[i].addEventListener('click', async () => {
         if (!isRunning) return
 
+        play(i)
+        itens[i].innerHTML = getPositions()[i]
+
         let round = getRound()
 
         if (round) {
             scoreItens[0].classList.add('scoreboard-item-round')
             scoreItens[1].classList.remove('scoreboard-item-round')
             scoreItens[1].classList.add('scoreboard-item')
-            
         } else {
             scoreItens[1].classList.add('scoreboard-item-round')
             scoreItens[0].classList.remove('scoreboard-item-round')
             scoreItens[0].classList.add('scoreboard-item')
         }
-
-        play(i)
-        itens[i].innerHTML = getPositions()[i]
-
+        
         const winningPositions = getWinningPositions()
         if (winningPositions.length == 0) return
-
+        
         isRunning = false
 
         for (let i = 0; i < itens.length; i++) {
@@ -38,7 +37,7 @@ for (let i = 0; i < itens.length; i++) {
         }
 
 
-        if (!round) scoreItens[0].innerHTML = `X: ${++score[0]}`
+        if (round) scoreItens[0].innerHTML = `X: ${++score[0]}`
         else scoreItens[1].innerHTML = `Ｏ: ${++score[1]}`
     })
 }
