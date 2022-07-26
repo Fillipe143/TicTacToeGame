@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,35 @@
     <title>TicTacToe</title>
 
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles//scoreboard.css">
+    <link rel="stylesheet" href="./styles//game.css">
 </head>
-<body>
-    <div class="board">
-        <h1>TicTacToe</h1>
-        <h1 class="restart">Restart</h1>
-        <div class="line">
-            <div class="item">-</div>
-            <div class="item">-</div>
-            <div class="item">-</div>
-        </div>
-        <div class="line">
-            <div class="item">-</div>
-            <div class="item">-</div>
-            <div class="item">-</div>
-        </div>
-        <div class="line">
-            <div class="item">-</div>
-            <div class="item">-</div>
-            <div class="item">-</div>
-        </div>
-    </div>
 
-    <script src="./srcipts/index.js" type="module"></script>
+<body>
+    <div class="container">
+        <h1>TicTacToe</h1>
+
+        <div class="scoreboard">
+            <p class="scoreboard-item-round">X: 0</p>
+            <p class="scoreboard-item">Ｏ: 0</p>
+        </div>
+
+        <div class="board">
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+            <p class="board-item">-</p>
+        </div>
+
+        <button>Restart</button>
+    </div>
+    
+    <script src="./scripts/index.js" type="module"></script>
 </body>
+
 </html>

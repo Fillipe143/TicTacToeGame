@@ -1,0 +1,25 @@
+.scoreboard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scoreboard-item, .scoreboard-item-round  {
+    width: 100%;
+    height: 100%;
+    margin: 5pt;
+    padding: 5pt;
+    border-radius: 5pt;
+
+    text-align: center;
+
+    background-color: white;
+    border: 1pt solid #282828;
+    font-size: large;
+}
+
+.scoreboard-item-round {
+    background-color: #efefef;
+}
