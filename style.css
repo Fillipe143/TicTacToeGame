@@ -18,7 +18,6 @@ body {
     -moz-user-select: none;
     /* Firefox */
     -ms-user-select: none;
-    /* IE10+ */
     user-select: none;
 }
 
@@ -52,7 +51,7 @@ body {
 
     background-color: #707070;
     border-radius: 10px;
-    margin: 1vh 1vh 1vh 1vh;
+    margin: 1vh;
 
     display: flex;
     flex-direction: row;
@@ -66,7 +65,7 @@ body {
     .item {
         width: 18vw;
         height: 18vw;
-        margin: 1vw 1vw 1vw 1vw;
+        margin: 1vw;
     }
 }
 
