@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: white;
+    background-color: #121212;
     border: 1pt solid #282828;
 
     font-size: xx-large;
@@ -21,7 +21,7 @@
 
 @media screen and (min-width: 600px) {
     .board-item:hover {
-        background-color: #efefef;
+        background-color: #272727;
     }
 }
 
@@ -34,6 +34,6 @@
     }
 
     .board-item:active {
-        background-color: #efefef;
+        background-color: #272727;
     }
 }

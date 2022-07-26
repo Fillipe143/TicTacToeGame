@@ -6,7 +6,8 @@ html, body {
     padding: 0;
 
     font-family: monospace;
-    color: #282828;
+    background-color: #121212;
+    color: #ededed;
 }
 
 body {
@@ -28,17 +29,18 @@ button {
     border-radius: 5pt;
     margin: 5pt;
 
-    background-color: white;
+    background-color: #121212;
+    color: #ededed;
     border: 1pt solid #282828;
 }
 
 
 @media screen and (min-width: 600px) {
     button:hover {
-        background-color: #efefef;
+        background-color: #272727;
     }
 }
 
 button:active {
-    background-color: #efefef;
+    background-color: #272727;
 }
