@@ -1,6 +1,5 @@
 export class Game {
     #players = ['X', 'Ｏ']
-    #gameOver = false
 
     constructor() {
         this.#gameOver = false
@@ -9,7 +8,6 @@ export class Game {
     }
 
     play(position) {
-        if (this.#gameOver) return
         if (this.board[position] != undefined) return
 
         this.board[position] = this.#players[this.round]
