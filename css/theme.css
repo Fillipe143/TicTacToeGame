@@ -1,0 +1,36 @@
+:root {
+    --name: 'light';
+    --bg: #ededed;
+    --sh: #d6d6d6;
+    --c: #121212;
+}
+
+* {
+    background: var(--bg);
+    color: var(--c);
+}
+
+.scoreboard,
+.scoreview,
+.scoreview-selected,
+.board-item,
+button {
+    border-color: var(--sh);
+}
+
+.scoreview-selected {
+    background: var(--sh);
+}
+
+.board-item:active,
+button:active {
+    background: var(--sh);
+}
+
+@media screen and (orientation: landscape) {
+
+    .board-item:hover,
+    button:hover {
+        background: var(--sh);
+    }
+}
