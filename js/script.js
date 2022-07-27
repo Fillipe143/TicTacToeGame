@@ -7,7 +7,15 @@ let score = [0, 0]
 let game = new Game()
 let gameOver = false
 
-document.getElementsByTagName('button')[0].addEventListener('click', restart)
+let theme = document.cookie
+    .split('; ')
+    .find((row) => row.startsWith('theme='))
+    ?.split('=')[1]
+
+if (theme != 'light') switchTheme()
+
+document.getElementsByTagName('button')[0].addEventListener('click', switchTheme)
+document.getElementsByTagName('button')[1].addEventListener('click', restart)
 
 for (let i = 0; i < views.length; i++) {
     const view = views[i]
@@ -44,10 +52,28 @@ function onFinished() {
 function restart() {
     game = new Game()
     updateRound()
-    
+
     for (let view of views) {
         view.innerHTML = ''
     }
-    
+
     gameOver = false
+}
+
+function switchTheme() {
+    const style = document.documentElement.style
+    const themeName = style.getPropertyValue('--name')
+
+    const theme = {
+        '--name': themeName == 'light' ? 'dark' : 'light',
+        '--bg': themeName == 'light' ? '#ededed' : '#121212',
+        '--sh': themeName == 'light' ? '#d6d6d6' : '#282828',
+        '--c': themeName == 'light' ? '#121212' : '#ededed'
+    }
+
+    document.cookie = `theme=${themeName || 'dark'}`
+
+    for (let propName in theme) {
+        style.setProperty(propName, theme[propName])
+    }
 }
