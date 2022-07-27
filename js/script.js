@@ -1,6 +1,9 @@
 import { Game } from './game.js'
 
 const views = document.getElementsByClassName('board-item')
+const scoreview = document.getElementsByTagName('p')
+
+let score = [0, 0]
 let game = new Game()
 let gameOver = false
 
@@ -17,11 +20,21 @@ function onClick(position, view) {
     game.play(position)
     view.innerHTML = game.board[position]
 
-    if (game.winningPositions.length != 0) onFinished()
+    if (game.winningPositions.length != 0) return onFinished()
+    updateRound()
+}
+
+function updateRound() {
+    scoreview[game.round].classList.add('scoreview-selected')
+    scoreview[game.round ? 0 : 1].classList.remove('scoreview-selected')
 }
 
 function onFinished() {
     gameOver = true
+    score[game.round ? 0 : 1]++
+
+    scoreview[0].innerHTML = `X: ${score[0]}`
+    scoreview[1].innerHTML = `Ｏ: ${score[1]}`
 
     for (let i = 0; i < views.length; i++) {
         if (!game.winningPositions.includes(i)) views[i].innerHTML = ''
@@ -30,9 +43,11 @@ function onFinished() {
 
 function restart() {
     game = new Game()
-    gameOver = false
-
+    updateRound()
+    
     for (let view of views) {
         view.innerHTML = ''
     }
+    
+    gameOver = false
 }
