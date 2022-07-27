@@ -1,0 +1,29 @@
+* {
+    background-color: #ededed;
+    color: #121212;
+}
+
+.scoreboard,
+.scoreview,
+.scoreview-selected,
+.board-item,
+button {
+    border-color: #d6d6d6;
+}
+
+.scoreview-selected {
+    background-color: #d6d6d6;
+}
+
+.board-item:active,
+button:active {
+    background-color: #d6d6d6;
+}
+
+@media screen and (orientation: landscape) {
+
+    .board-item:hover,
+    button:hover {
+        background-color: #d6d6d6;
+    }
+}
